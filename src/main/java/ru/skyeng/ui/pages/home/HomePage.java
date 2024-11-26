@@ -3,17 +3,16 @@ package ru.skyeng.ui.pages.home;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import ru.skyeng.ui.driver.Driver;
+import ru.skyeng.ui.utils.CheckLink;
 
-import java.time.Duration;
+
+import static ru.skyeng.ui.driver.Driver.getDriver;
 
 public class HomePage {
     private WebDriver driver;
 
     public HomePage() {
-        driver = Driver.getDriver();
+        driver = getDriver();
     }
 
     public HomePage clickHeaderMenuSkyengLogo() {
@@ -47,24 +46,25 @@ public class HomePage {
         return this;
     }
 
-    public HomePage focusHeaderMenuMore() {
+    public CheckLink focusHeaderMenuMore() {
         driver.findElement(By.xpath(HomePageXpath.ACCEPT_COOKIE)).click();
         int maxRetry = 2;
         for (int i = 0; i < maxRetry; i++) {
             try {
-                WebElement element = driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_MORE_2));
-                element.click();
+                driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_MORE_2)).click();
+//                driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_TEACHERS)).click();
                 break;
             }
             catch (StaleElementReferenceException e) {
                 if (i == maxRetry - 1) throw e;
             }
         }
-        return this;
+        return new CheckLink(getDriver());
     }
 
-    public HomePage clickHeaderMenuMoreTeachers() {
+    public CheckLink clickHeaderMenuMoreTeachers() {
+        driver.findElement(By.xpath(HomePageXpath.ACCEPT_COOKIE)).click();
         driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_TEACHERS)).click();
-        return this;
+        return new CheckLink(getDriver());
     }
 }

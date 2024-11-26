@@ -8,10 +8,9 @@ import ru.skyeng.ui.pages.home.HomePage;
 public class HomePageTest extends BaseTest {
 
     @Test
-    @DisplayName("Ссылки выпадающего списка 'Еще'")
+    @DisplayName("Переход по ссылку Учителям")
     public void testClickTeachers(){
-    HomePage homePage = new HomePage()
-            .focusHeaderMenuMore()
-            .clickHeaderMenuMoreTeachers();
+    HomePage homePage = new HomePage();
+    Assertions.assertTrue(homePage.clickHeaderMenuMoreTeachers().getActualLink().contains("https://job.skyeng.ru/english-teachers?utm_source=skyeng&utm_medium=newbutton&utm_campaign=headerprepfromskyeng"));
     }
 }
