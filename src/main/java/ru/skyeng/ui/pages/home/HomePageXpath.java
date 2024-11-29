@@ -11,7 +11,8 @@ public class HomePageXpath {
     public static final String HEADER_MENU_MORE = "//span[text()='Ещё']";
     public static final String HEADER_MENU_TEACHERS = "//a[@href='https://job.skyeng.ru/english-teachers?utm_source=skyeng&utm_medium=newbutton&utm_campaign=headerprepfromskyeng']";
     public static final String HEADER_MENU_MORE_TEACHERS = "//div[@class='header-menu-content ng-tns-c1903745324-0']//a[@class='simple-menu-item-link ng-star-inserted'][contains(text(),'Учителям')]";
-    public static final String HEADER_MENU_OTHER_COURSES = "//a[@href='https://sky.pro/courses']";
+    public static final String HEADER_MENU_COURSES = "//a[@href='https://sky.pro/courses']";
+    public static final String HEADER_MENU_OTHER_COURSES = "//div[@class='header-menu-content ng-tns-c1903745324-0']//a[@class='simple-menu-item-link ng-star-inserted'][contains(text(),'Другие курсы')]";
 
     public static final String LOGIN = "//button[@data-testid='cms-header-login']";
     public static final String SIGN_UP_FOR_LESSON = "//button[@data-testid='cms-header-register']";

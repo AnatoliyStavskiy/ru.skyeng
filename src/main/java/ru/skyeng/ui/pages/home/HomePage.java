@@ -45,15 +45,26 @@ public class HomePage {
         driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_ONLINE_TEST)).click();
         return this;
     }
+
     public CheckLink clickHeaderMenuTeachers() {
-        HomePage homePage = new HomePage();
         driver.findElement(By.xpath(HomePageXpath.ACCEPT_COOKIE)).click();
         try {
             driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_TEACHERS)).click();
         } catch (ElementNotInteractableException e) {
             driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_MORE)).click();
             driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_MORE_TEACHERS)).click();
-            }
+        }
+        return new CheckLink(getDriver());
+    }
+
+    public CheckLink clickHeaderMenuOtherCourses() {
+        driver.findElement(By.xpath(HomePageXpath.ACCEPT_COOKIE)).click();
+        try {
+            driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_COURSES)).click();
+        } catch (ElementNotInteractableException e) {
+            driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_MORE)).click();
+            driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_OTHER_COURSES)).click();
+        }
         return new CheckLink(getDriver());
     }
 }

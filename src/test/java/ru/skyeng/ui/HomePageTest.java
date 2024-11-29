@@ -10,8 +10,15 @@ public class HomePageTest extends BaseTest {
 
     @Test
     @DisplayName("Переход по ссылке 'Учителям'")
-    public void testClickHeaderLinkTeachers(){
-    HomePage homePage = new HomePage();
-    Assertions.assertTrue(homePage.clickHeaderMenuTeachers().getActualLink().contains(HeaderLink.FOR_TEACHERS_LINK));
+    public void testClickHeaderLinkTeachers() {
+        HomePage homePage = new HomePage();
+        Assertions.assertTrue(homePage.clickHeaderMenuTeachers().getActualLink().contains(HeaderLink.TEACHERS_LINK));
+    }
+
+    @Test
+    @DisplayName("Переход по ссылке 'Другие курсы'")
+    public void testClickHeaderLinkOtherCourses() {
+        HomePage homePage = new HomePage();
+        Assertions.assertEquals(homePage.clickHeaderMenuOtherCourses().getActualLink(), (HeaderLink.OTHER_COURSES), "Ссылки не равны");
     }
 }
