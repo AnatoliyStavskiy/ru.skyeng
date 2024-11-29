@@ -1,7 +1,7 @@
 package ru.skyeng.ui.pages.home;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
 import ru.skyeng.ui.utils.CheckLink;
 
@@ -41,30 +41,19 @@ public class HomePage {
     }
 
     public HomePage clickHeaderMenuOnlineTest() {
-        driver.findElement(By.tagName(HomePageXpath.HEADER_MENU_MORE_XPATH)).getAttribute("Ещё");
+        driver.findElement(By.tagName(HomePageXpath.HEADER_MENU_MORE)).getAttribute("Ещё");
         driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_ONLINE_TEST)).click();
         return this;
     }
-
-    public CheckLink focusHeaderMenuMore() {
+    public CheckLink clickHeaderMenuTeachers() {
+        HomePage homePage = new HomePage();
         driver.findElement(By.xpath(HomePageXpath.ACCEPT_COOKIE)).click();
-        int maxRetry = 2;
-        for (int i = 0; i < maxRetry; i++) {
-            try {
-                driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_MORE_2)).click();
-//                driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_TEACHERS)).click();
-                break;
+        try {
+            driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_TEACHERS)).click();
+        } catch (ElementNotInteractableException e) {
+            driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_MORE)).click();
+            driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_MORE_TEACHERS)).click();
             }
-            catch (StaleElementReferenceException e) {
-                if (i == maxRetry - 1) throw e;
-            }
-        }
-        return new CheckLink(getDriver());
-    }
-
-    public CheckLink clickHeaderMenuMoreTeachers() {
-        driver.findElement(By.xpath(HomePageXpath.ACCEPT_COOKIE)).click();
-        driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_TEACHERS)).click();
         return new CheckLink(getDriver());
     }
 }

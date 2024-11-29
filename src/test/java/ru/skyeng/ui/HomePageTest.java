@@ -4,13 +4,14 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.skyeng.ui.pages.home.HomePage;
+import ru.skyeng.ui.pages.links.HeaderLink;
 
 public class HomePageTest extends BaseTest {
 
     @Test
-    @DisplayName("Переход по ссылку Учителям")
-    public void testClickTeachers(){
+    @DisplayName("Переход по ссылке 'Учителям'")
+    public void testClickHeaderLinkTeachers(){
     HomePage homePage = new HomePage();
-    Assertions.assertTrue(homePage.clickHeaderMenuMoreTeachers().getActualLink().contains("https://job.skyeng.ru/english-teachers?utm_source=skyeng&utm_medium=newbutton&utm_campaign=headerprepfromskyeng"));
+    Assertions.assertTrue(homePage.clickHeaderMenuTeachers().getActualLink().contains(HeaderLink.FOR_TEACHERS_LINK));
     }
 }
