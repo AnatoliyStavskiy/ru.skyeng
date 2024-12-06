@@ -36,7 +36,6 @@ public class LoginApiTest {
         .when()
                 .post()
         .then()
-                .log().all()
                 .statusCode(200)
                 .body("success", equalTo(false))
                 .body("message", equalTo("Неверный CSRF-токен. Пожалуйста, перезагрузите страницу и попробуйте войти ещё раз."));
@@ -46,7 +45,6 @@ public class LoginApiTest {
     @DisplayName("Запись на консультацию зарегистрированного пользователя")
     public void testRegisteredUserRecord() {
         ValidatableResponse response = BookConsultationApi.getUserRecordData("Alex", "+79454874459", "bixby5623@gmail.com");
-                response.log().all();
                 response.statusCode(200);
                 response.body("message", equalTo("OK"));
                 response.body("userLogIn", equalTo(false));
@@ -62,9 +60,26 @@ public class LoginApiTest {
     public void testRegisteredNewUserRecord() {
         User user = new User();
         ValidatableResponse response = BookConsultationApi.getUserRecordData(user);
-        response.log().all();
         response.statusCode(200);
         response.body("message", equalTo("OK"));
         response.body("userLogIn", equalTo(true));
+    }
+
+    @Test
+    @DisplayName("Запись на консультацию только с именем")
+    public void testRegisteredNewUserOnlyWithName() {
+        User user = new User("Vasiliy");
+        ValidatableResponse response = BookConsultationApi.getUserRecordData(user);
+        response.statusCode(400);
+        response.body("exception.message", equalTo("Укажите email или телефон"));
+    }
+
+    @Test
+    @DisplayName("Запись на консультацию только с номером и почтой")
+    public void testRegisteredNewUserOnlyWithPhoneAndEmail() {
+        User user = new User("+79349742564", "hahaga@gmail.com");
+        ValidatableResponse response = BookConsultationApi.getUserRecordData(user);
+        response.statusCode(400);
+        response.body("exception.message", equalTo("Укажите своё имя"));
     }
 }
