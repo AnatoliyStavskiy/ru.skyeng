@@ -1,19 +1,33 @@
 package ru.skyeng.domain;
 
+import ru.skyeng.util.GenerationDataUtil;
+
 public class User {
-    private String login;
-    private String password;
+    private String name;
+    private String phoneNumber;
+    private String email;
 
-    public String getLogin() {
-        return login;
+    public User(String name, String phoneNumber, String email) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getName() {
+        return name;
     }
 
-    public User(String login, String password) {
-        this.login = login;
-        this.password = password;
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public User() {
+        this.name = GenerationDataUtil.generateName();
+        this.phoneNumber = GenerationDataUtil.generateRussiaMobilePhone();
+        this.email = GenerationDataUtil.generateEmail();
     }
 }
