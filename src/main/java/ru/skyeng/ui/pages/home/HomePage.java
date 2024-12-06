@@ -25,25 +25,25 @@ public class HomePage {
         return this;
     }
 
-    public HomePage clickHeaderMenuTutors() {
+    public CheckLink clickHeaderMenuTutors() {
         driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_TUTORS)).click();
-        return this;
+        return new CheckLink(getDriver());
     }
 
-    public HomePage clickHeaderMenuSertificates() {
+    public CheckLink clickHeaderMenuCertificates() {
         driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_CERTIFICATES)).click();
-        return this;
+        return new CheckLink(getDriver());
     }
 
-    public HomePage clickHeaderMenuCareerGuidanceIt() {
+    public CheckLink clickHeaderMenuCareerGuidanceIt() {
         driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_CAREER_GUIDANCE_IT)).click();
-        return this;
+        return new CheckLink(getDriver());
     }
 
-    public HomePage clickHeaderMenuOnlineTest() {
-        driver.findElement(By.tagName(HomePageXpath.HEADER_MENU_MORE)).getAttribute("Ещё");
+    public CheckLink clickHeaderMenuOnlineTest() {
+//        driver.findElement(By.tagName(HomePageXpath.HEADER_MENU_MORE)).getAttribute("Ещё");
         driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_ONLINE_TEST)).click();
-        return this;
+        return new CheckLink(getDriver());
     }
 
     public CheckLink clickHeaderMenuTeachers() {
