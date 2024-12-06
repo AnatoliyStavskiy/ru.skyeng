@@ -4,6 +4,7 @@ import io.restassured.response.ValidatableResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import ru.skyeng.domain.User;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
@@ -54,5 +55,16 @@ public class LoginApiTest {
                 response.body("loginLink", equalTo(false));
                 response.body("educationServiceId", equalTo(15876089));
                 response.body("wasBump", equalTo(true));
+    }
+
+    @Test
+    @DisplayName("Запись на консультацию нового пользователя")
+    public void testRegisteredNewUserRecord() {
+        User user = new User();
+        ValidatableResponse response = BookConsultationApi.getUserRecordData(user);
+        response.log().all();
+        response.statusCode(200);
+        response.body("message", equalTo("OK"));
+        response.body("userLogIn", equalTo(true));
     }
 }
