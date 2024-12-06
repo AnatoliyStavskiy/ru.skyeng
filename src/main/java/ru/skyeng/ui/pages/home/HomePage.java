@@ -3,6 +3,7 @@ package ru.skyeng.ui.pages.home;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
+import ru.skyeng.ui.pages.links.adult.AdultLinkXpath;
 import ru.skyeng.ui.utils.CheckLink;
 
 
@@ -15,14 +16,14 @@ public class HomePage {
         driver = getDriver();
     }
 
-    public HomePage clickHeaderMenuSkyengLogo() {
+    public CheckLink clickHeaderMenuSkyengLogo() {
         driver.findElement(By.xpath(HomePageXpath.HEADER_SKYENG_LOGO)).click();
-        return this;
+        return new CheckLink(getDriver());
     }
 
-    public HomePage clickHeaderMenuAdults() {
+    public AdultPage clickHeaderMenuAdult() {
         driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_ADULTS)).click();
-        return this;
+        return new AdultPage();
     }
 
     public CheckLink clickHeaderMenuTutors() {
