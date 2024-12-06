@@ -1,6 +1,7 @@
 package ru.skyeng.api;
 
 import io.restassured.response.ValidatableResponse;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -8,6 +9,11 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 public class LoginApiTest {
+
+    @BeforeEach
+    void setUp() {
+        UserLoginApiRequest.initRequestSpecification();
+    }
 
     @Test
     @DisplayName("Авторизация с неверным логином и паролем")
