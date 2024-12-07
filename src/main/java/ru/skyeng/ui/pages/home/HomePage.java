@@ -3,7 +3,6 @@ package ru.skyeng.ui.pages.home;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
-import ru.skyeng.ui.pages.links.adult.AdultLinkXpath;
 import ru.skyeng.ui.utils.CheckLink;
 
 
@@ -42,7 +41,6 @@ public class HomePage {
     }
 
     public CheckLink clickHeaderMenuOnlineTest() {
-//        driver.findElement(By.tagName(HomePageXpath.HEADER_MENU_MORE)).getAttribute("Ещё");
         driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_ONLINE_TEST)).click();
         return new CheckLink(getDriver());
     }
