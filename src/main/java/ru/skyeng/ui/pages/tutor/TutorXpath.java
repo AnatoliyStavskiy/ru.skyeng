@@ -26,12 +26,10 @@ public class TutorXpath {
 
     public static final String CITY_INPUT_XPATH = "//input[@placeholder='Поиск города']";
 
-    public static final String SCHEDULE_XPATH = "//repetitors-catalog-filter-control[@class='ng-untouched ng-pristine ng-valid']//button[@type='button'][contains(text(),'Не выбрано')]";
+    public static final String SCHEDULE_XPATH = "//*[@id=\"catalog-listing\"]/div/div[2]/div/repetitors-catalog-filters/div/div[2]/div[1]/div/div[2]/repetitors-catalog-schedule-filter/repetitors-catalog-filter-control/div/div[2]/button[1]";
     public static final String WEEK_DAYS_SCHEDULE_XPATH = "//div[@class='filter ng-star-inserted']//li[1]//span[2]";
-    public static final String WEEKEND_XPATH = "//div[@class='filter ng-star-inserted']//li[2]//span[2]";
-    public static final String MORNING_XPATH = "//div[@class='filter ng-star-inserted']//li[3]//span[2]";
-    public static final String DAY_XPATH = "//div[@class='filter ng-star-inserted']//li[4]//span[2]";
-    public static final String EVENING_XPATH = "//div[@class='filter ng-star-inserted']//li[5]//span[2]";
-
-    public static final String CLOSE_BANNER_DIV = "//button[@class='central-banner-close']//*[name()='svg']//*[name()='path' and contains(@fill-rule,'evenodd')]";
+    public static final String WEEKEND_SCHEDULE_XPATH = "//div[@class='filter ng-star-inserted']//li[2]//span[2]";
+    public static final String MORNING_SCHEDULE_XPATH = "//div[@class='filter ng-star-inserted']//li[3]//span[2]";
+    public static final String DAY_SCHEDULE_XPATH = "//div[@class='filter ng-star-inserted']//li[4]//span[2]";
+    public static final String EVENING_SCHEDULE_XPATH = "//div[@class='filter ng-star-inserted']//li[5]//span[2]";
 }
