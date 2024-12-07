@@ -1,8 +1,10 @@
 package ru.skyeng.ui.pages.tutor;
 
 public class TutorXpath {
-    public static final String LEVEL_XPATH = "//div[@class='ng-star-inserted']//div[1]//repetitors-catalog-filter-control[1]//div[1]//div[2]//button[1]";
-    public static final String BEGINNER_LEVEL_XPATH = "//repetitors-catalog-filter-control[@class='ng-untouched ng-star-inserted ng-dirty ng-invalid']//li[1]//span[1]";
+    public static final String LEVEL_XPATH = "/html[1]/body[1]/skyeng-ff[1]/div[1]/repetitors-catalog-landing[1]/div[1]/div[2]/div[1]/div[2]/div[1]/repetitors-catalog-filters[1]/div[1]/div[2]/div[1]/div[1]/div[1]/repetitors-catalog-common-filters[1]/div[1]/repetitors-catalog-filter-control[1]/div[1]/div[2]/button[1]";
+    public static final String CHECK_LEVEL_XPATH = "//button[contains(text(),'Beginner Английский с нуля')]";
+    public static final String BEGINNER_LEVEL_XPATH = "//em[contains(text(),'Английский с нуля')]";
+    public static final String CSS_XPATH = "div[class='control -adults -clearable -empty -open'] li:nth-child(1) span:nth-child(1)";
     public static final String ELEMENTARY_LEVEL_XPATH = "//span[normalize-space()='Elementary']";
     public static final String PRE_INTERMEDIATE_LEVEL_XPATH = "//span[normalize-space()='Pre-intermediate']";
     public static final String INTERMEDIATE_LEVEL_XPATH = "//span[normalize-space()='Intermediate']";
@@ -32,4 +34,6 @@ public class TutorXpath {
     public static final String MORNING_XPATH = "//div[@class='filter ng-star-inserted']//li[3]//span[2]";
     public static final String DAY_XPATH = "//div[@class='filter ng-star-inserted']//li[4]//span[2]";
     public static final String EVENING_XPATH = "//div[@class='filter ng-star-inserted']//li[5]//span[2]";
+
+    public static final String CLOSE_BANNER_DIV = "//button[@class='central-banner-close']//*[name()='svg']//*[name()='path' and contains(@fill-rule,'evenodd')]";
 }
