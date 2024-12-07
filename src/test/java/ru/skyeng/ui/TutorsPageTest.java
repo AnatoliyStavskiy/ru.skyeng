@@ -15,9 +15,9 @@ public class TutorsPageTest {
     @Test
     @DisplayName("Выбор уровня Beginner")
     public void testClickBeginnerLevel(){
-        TutorPage tutorPage = new TutorPage()
-             .clickLevelFilter();
-             tutorPage.clickBeginnerLevelFilter();
+        TutorPage tutorPage = new TutorPage();
+        tutorPage.clickLevelFilter();
+        tutorPage.clickBeginnerLevelFilter();
         Assertions.assertEquals(tutorPage.levelFilter(), TutorFilterMessage.BEGINNER_MESSAGE);
     }
 
@@ -59,7 +59,7 @@ public class TutorsPageTest {
 
     @Test
     @DisplayName("Выбор уровня Advanced")
-    public void testClickAdvancedLevel(){
+    public void testClickAdvancedLevel1(){
         TutorPage tutorPage = new TutorPage();
         tutorPage.clickLevelFilter();
         tutorPage.clickAdvancedLevelFilter();
