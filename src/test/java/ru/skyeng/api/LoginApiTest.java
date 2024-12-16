@@ -4,6 +4,8 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import io.restassured.http.Cookies;
 import io.restassured.response.ValidatableResponse;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -24,12 +26,18 @@ public class LoginApiTest {
         UserLoginApiRequest.initRequestSpecification();
     }
 
+    private static final Logger logger = LogManager.getLogger();
+
     @Test
     @DisplayName("Авторизация с корректными данными")
     public void testAuthorizationWithValidData() {
+        logger.info("Стартовал тест - Авторизация с корректными данными");
+
         Selenide.open(UserLoginApiRequest.ID_LIGIN_URL);
         $x("//a[@class='link link--primary js-phone-form-to-username-password']").click();
         String csrf = $x("//input[@name='csrfToken']").getValue();
+
+        logger.info("Авторизация с корректными данными - получен csrfToken: " + csrf);
 
         var cookiesBrowser = WebDriverRunner.getWebDriver().manage().getCookies();
         Selenide.closeWebDriver();
@@ -44,6 +52,8 @@ public class LoginApiTest {
             restCookies.add(temp);
         }
 
+        logger.info("Авторизация с корректными данными - полученs cookie: " + restCookies);
+
         given().cookies(new Cookies(restCookies))
                 .formParam("csrfToken", csrf)
                 .formParam("username", "tests2025test@tutamail.com")
@@ -53,6 +63,8 @@ public class LoginApiTest {
                 .log().body()
                 .statusCode(200)
                 .body("success", equalTo(true));
+
+        logger.info("Завершен тест - Авторизация с корректными данными");
     }
 
     @Test
