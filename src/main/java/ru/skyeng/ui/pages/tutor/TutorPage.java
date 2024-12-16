@@ -16,7 +16,7 @@ public class TutorPage {
 
     public TutorPage() {
         driver = getDriver();
-        webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(7));
     }
 
     public void clickLevelFilter() {

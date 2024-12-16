@@ -1,7 +1,7 @@
 package ru.skyeng.ui.pages.tutor;
 
 public class TutorXpath {
-    public static final String LEVEL_XPATH = "//*[@id=\"catalog-listing\"]/div/div[2]/div/repetitors-catalog-filters/div/div[2]/div[1]/div/div[1]/repetitors-catalog-common-filters/div[1]/repetitors-catalog-filter-control/div/div[2]/button[1]";
+    public static final String LEVEL_XPATH = "//*[@id=\"catalog-listing\"]/div/div[1]/div/repetitors-catalog-filters/div/div[2]/div[1]/div/div[1]/repetitors-catalog-common-filters/div[1]/repetitors-catalog-filter-control/div/div[2]/button[1]";
     public static final String BEGINNER_LEVEL_XPATH = "//em[contains(text(),'Английский с нуля')]";
     public static final String ELEMENTARY_LEVEL_XPATH = "//span[normalize-space()='Elementary']";
     public static final String PRE_INTERMEDIATE_LEVEL_XPATH = "//span[normalize-space()='Pre-intermediate']";
@@ -26,7 +26,7 @@ public class TutorXpath {
 
     public static final String CITY_INPUT_XPATH = "//input[@placeholder='Поиск города']";
 
-    public static final String SCHEDULE_XPATH = "//*[@id=\"catalog-listing\"]/div/div[2]/div/repetitors-catalog-filters/div/div[2]/div[1]/div/div[2]/repetitors-catalog-schedule-filter/repetitors-catalog-filter-control/div/div[2]/button[1]";
+    public static final String SCHEDULE_XPATH = "//*[@id=\"catalog-listing\"]/div/div[1]/div/repetitors-catalog-filters/div/div[2]/div[1]/div/div[2]/repetitors-catalog-schedule-filter/repetitors-catalog-filter-control/div/div[2]/button[1]";
     public static final String WEEK_DAYS_SCHEDULE_XPATH = "//div[@class='filter ng-star-inserted']//li[1]//span[2]";
     public static final String WEEKEND_SCHEDULE_XPATH = "//div[@class='filter ng-star-inserted']//li[2]//span[2]";
     public static final String MORNING_SCHEDULE_XPATH = "//div[@class='filter ng-star-inserted']//li[3]//span[2]";
