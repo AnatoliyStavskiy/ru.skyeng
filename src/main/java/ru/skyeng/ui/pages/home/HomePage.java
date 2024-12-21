@@ -35,8 +35,8 @@ public class HomePage {
         return new CheckLink(getDriver());
     }
 
-    public CheckLink clickHeaderMenuCareerGuidanceIt() {
-        driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_CAREER_GUIDANCE_IT)).click();
+    public CheckLink clickHeaderMenuNewProfession() {
+        driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_NEW_PROFESSION)).click();
         return new CheckLink(getDriver());
     }
 
@@ -46,7 +46,6 @@ public class HomePage {
     }
 
     public CheckLink clickHeaderMenuTeachers() {
-        driver.findElement(By.xpath(HomePageXpath.ACCEPT_COOKIE)).click();
         try {
             driver.findElement(By.xpath(HomePageXpath.HEADER_MENU_TEACHERS)).click();
         } catch (ElementNotInteractableException e) {
