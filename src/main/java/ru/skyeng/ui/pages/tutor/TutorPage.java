@@ -19,9 +19,10 @@ public class TutorPage {
         webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(7));
     }
 
-    public void clickLevelFilter() {
+    public TutorPage clickLevelFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.LEVEL_XPATH)).click();
+        return this;
     }
 
     public String checkLevelFilter() {
@@ -58,9 +59,10 @@ public class TutorPage {
         driver.findElement(By.xpath(TutorXpath.ADVANCED_LEVEL_XPATH)).click();
     }
 
-    public void clickTargetFilter() {
+    public TutorPage clickTargetFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.TARGET_XPATH)).click();
+        return this;
     }
 
     public String checkTargetFilter() {
@@ -97,9 +99,10 @@ public class TutorPage {
         driver.findElement(By.xpath(TutorXpath.OVERCOME_BARRIER_TARGET_XPATH)).click();
     }
 
-    public void clickTypeTeacher() {
+    public TutorPage clickTypeTeacher() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.TYPE_TEACHER_XPATH)).click();
+        return this;
     }
 
     public String checkTypeTeacher() {
@@ -126,9 +129,10 @@ public class TutorPage {
         driver.findElement(By.xpath(TutorXpath.CITY_INPUT_XPATH)).sendKeys(string);
     }
 
-    public void clickScheduleFilter() {
+    public TutorPage clickScheduleFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.SCHEDULE_XPATH)).click();
+        return this;
     }
 
     public String checkScheduleFilter() {
@@ -158,5 +162,9 @@ public class TutorPage {
     public void clickEveningScheduleFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.EVENING_SCHEDULE_XPATH)).click();
+    }
+
+    public String checkFoundTutors() {
+        return driver.findElement(By.xpath(TutorXpath.FOUND_TUTORS)).getText();
     }
 }
