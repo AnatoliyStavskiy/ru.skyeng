@@ -25,4 +25,5 @@ public class TutorFilterMessage {
     public static final String DAY_SCHEDULE_MESSAGE = "День 11:00–17:00";
     public static final String EVENING_SCHEDULE_MESSAGE = "Вечер 17:00–22:00";
 
+    public static final String FOUND_TUTORS_MESSAGE = "Репетиторы по английскому языку";
 }

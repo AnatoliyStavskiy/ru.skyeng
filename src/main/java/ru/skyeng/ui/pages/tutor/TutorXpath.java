@@ -32,4 +32,6 @@ public class TutorXpath {
     public static final String MORNING_SCHEDULE_XPATH = "//div[@class='filter ng-star-inserted']//li[3]//span[2]";
     public static final String DAY_SCHEDULE_XPATH = "//div[@class='filter ng-star-inserted']//li[4]//span[2]";
     public static final String EVENING_SCHEDULE_XPATH = "//div[@class='filter ng-star-inserted']//li[5]//span[2]";
+
+    public static final String FOUND_TUTORS = "//*[@id=\"catalog-listing\"]/h1";
 }

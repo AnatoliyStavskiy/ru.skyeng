@@ -16,8 +16,7 @@ public class TutorsPageTest {
     @DisplayName("Выбор уровня 'Beginner'")
     public void testClickBeginnerLevel() {
         TutorPage tutorPage = new TutorPage();
-        tutorPage.clickLevelFilter();
-        tutorPage.clickBeginnerLevelFilter();
+        tutorPage.clickLevelFilter().clickBeginnerLevelFilter();
         Assertions.assertEquals(tutorPage.checkLevelFilter(), TutorFilterMessage.BEGINNER_MESSAGE);
     }
 
@@ -25,8 +24,7 @@ public class TutorsPageTest {
     @DisplayName("Выбор уровня 'Elementary'")
     public void testClickElementaryLevel() {
         TutorPage tutorPage = new TutorPage();
-        tutorPage.clickLevelFilter();
-        tutorPage.clickElementaryLevelFilter();
+        tutorPage.clickLevelFilter().clickElementaryLevelFilter();
         Assertions.assertEquals(tutorPage.checkLevelFilter(), TutorFilterMessage.ELEMENTARY_MESSAGE);
     }
 
@@ -34,8 +32,7 @@ public class TutorsPageTest {
     @DisplayName("Выбор уровня 'Pre-intermediate'")
     public void testClickPreIntermediateLevel() {
         TutorPage tutorPage = new TutorPage();
-        tutorPage.clickLevelFilter();
-        tutorPage.clickPreIntermediateLevelFilter();
+        tutorPage.clickLevelFilter().clickPreIntermediateLevelFilter();
         Assertions.assertEquals(tutorPage.checkLevelFilter(), TutorFilterMessage.PRE_INTERMEDIATE_MESSAGE);
     }
 
@@ -43,8 +40,7 @@ public class TutorsPageTest {
     @DisplayName("Выбор уровня 'Intermediate'")
     public void testClickIntermediateLevel() {
         TutorPage tutorPage = new TutorPage();
-        tutorPage.clickLevelFilter();
-        tutorPage.clickIntermediateLevelFilter();
+        tutorPage.clickLevelFilter().clickIntermediateLevelFilter();
         Assertions.assertEquals(tutorPage.checkLevelFilter(), TutorFilterMessage.INTERMEDIATE_MESSAGE);
     }
 
@@ -52,8 +48,7 @@ public class TutorsPageTest {
     @DisplayName("Выбор уровня 'Upper-intermediate'")
     public void testClickUpperIntermediateLevel() {
         TutorPage tutorPage = new TutorPage();
-        tutorPage.clickLevelFilter();
-        tutorPage.clickUpperIntermediateLevelFilter();
+        tutorPage.clickLevelFilter().clickUpperIntermediateLevelFilter();
         Assertions.assertEquals(tutorPage.checkLevelFilter(), TutorFilterMessage.UPPER_INTERMEDIATE_MESSAGE);
     }
 
@@ -61,8 +56,7 @@ public class TutorsPageTest {
     @DisplayName("Выбор уровня 'Advanced'")
     public void testClickAdvancedLevel1() {
         TutorPage tutorPage = new TutorPage();
-        tutorPage.clickLevelFilter();
-        tutorPage.clickAdvancedLevelFilter();
+        tutorPage.clickLevelFilter().clickAdvancedLevelFilter();
         Assertions.assertEquals(tutorPage.checkLevelFilter(), TutorFilterMessage.ADVANCED_MESSAGE);
     }
 
@@ -70,8 +64,7 @@ public class TutorsPageTest {
     @DisplayName("Выбор цели 'Разговорный Английский'")
     public void testClickTalkEnglishTarget() {
         TutorPage tutorPage = new TutorPage();
-        tutorPage.clickTargetFilter();
-        tutorPage.clickTalkEnglishTargetFilter();
+        tutorPage.clickTargetFilter().clickTalkEnglishTargetFilter();
         Assertions.assertEquals(tutorPage.checkTargetFilter(), TutorFilterMessage.TALK_ENGLISH_MESSAGE);
     }
 
@@ -79,8 +72,7 @@ public class TutorsPageTest {
     @DisplayName("Выбор цели 'Бизнес Английский'")
     public void testClickBusinessEnglishTarget() {
         TutorPage tutorPage = new TutorPage();
-        tutorPage.clickTargetFilter();
-        tutorPage.clickBusinessEnglishTargetFilter();
+        tutorPage.clickTargetFilter().clickBusinessEnglishTargetFilter();
         Assertions.assertEquals(tutorPage.checkTargetFilter(), TutorFilterMessage.BUSINESS_ENGLISH_MESSAGE);
     }
 
@@ -88,8 +80,7 @@ public class TutorsPageTest {
     @DisplayName("Выбор цели 'Подготовиться к экзамену'")
     public void testClickPreparationExamTarget() {
         TutorPage tutorPage = new TutorPage();
-        tutorPage.clickTargetFilter();
-        tutorPage.clickPreparationExamTargetFilter();
+        tutorPage.clickTargetFilter().clickPreparationExamTargetFilter();
         Assertions.assertEquals(tutorPage.checkTargetFilter(), TutorFilterMessage.PREPARATION_EXAM_MESSAGE);
     }
 
@@ -97,8 +88,7 @@ public class TutorsPageTest {
     @DisplayName("Выбор цели 'Использовать язык для путешествия'")
     public void testClickTravelEnglishTarget() {
         TutorPage tutorPage = new TutorPage();
-        tutorPage.clickTargetFilter();
-        tutorPage.clickTravelEnglishTargetFilter();
+        tutorPage.clickTargetFilter().clickTravelEnglishTargetFilter();
         Assertions.assertEquals(tutorPage.checkTargetFilter(), TutorFilterMessage.TRAVEL_ENGLISH_MESSAGE);
     }
 
@@ -106,8 +96,7 @@ public class TutorsPageTest {
     @DisplayName("Выбор цели 'Подготовиться к собеседованию'")
     public void testClickPreparationInterviewTarget() {
         TutorPage tutorPage = new TutorPage();
-        tutorPage.clickTargetFilter();
-        tutorPage.clickPreparationInterviewTargetFilter();
+        tutorPage.clickTargetFilter().clickPreparationInterviewTargetFilter();
         Assertions.assertEquals(tutorPage.checkTargetFilter(), TutorFilterMessage.PREPARATION_INTERVIEW_MESSAGE);
     }
 
@@ -115,8 +104,7 @@ public class TutorsPageTest {
     @DisplayName("Выбор цели 'Преодолеть языковой барьер'")
     public void testClickOvercomeBarrierTarget() {
         TutorPage tutorPage = new TutorPage();
-        tutorPage.clickTargetFilter();
-        tutorPage.clickOvercomeBarrierTargetFilter();
+        tutorPage.clickTargetFilter().clickOvercomeBarrierTargetFilter();
         Assertions.assertEquals(tutorPage.checkTargetFilter(), TutorFilterMessage.OVERCOME_BARRIER_MESSAGE);
     }
 
@@ -124,8 +112,7 @@ public class TutorsPageTest {
     @DisplayName("Выбор преподователя 'Рускоязычные'")
     public void testClickRussianSpeakingTeacher() {
         TutorPage tutorPage = new TutorPage();
-        tutorPage.clickTypeTeacher();
-        tutorPage.clickRussianSpeakingTeacherFilter();
+        tutorPage.clickTypeTeacher().clickRussianSpeakingTeacherFilter();
         Assertions.assertEquals(tutorPage.checkTypeTeacher(), TutorFilterMessage.RUSSIAN_SPEAKING_TEACHER_MESSAGE);
     }
 
@@ -133,8 +120,7 @@ public class TutorsPageTest {
     @DisplayName("Выбор преподователя 'Премиум'")
     public void testClickPremiumTeacher() {
         TutorPage tutorPage = new TutorPage();
-        tutorPage.clickTypeTeacher();
-        tutorPage.clickPremiumTeacherFilter();
+        tutorPage.clickTypeTeacher().clickPremiumTeacherFilter();
         Assertions.assertEquals(tutorPage.checkTypeTeacher(), TutorFilterMessage.PREMIUM_TEACHER_MESSAGE);
     }
 
@@ -142,8 +128,7 @@ public class TutorsPageTest {
     @DisplayName("Выбор преподователя 'Англоязычные'")
     public void testClickEnglishSpeakingTeacher() {
         TutorPage tutorPage = new TutorPage();
-        tutorPage.clickTypeTeacher();
-        tutorPage.clickEnglishSpeakingTeacherFilter();
+        tutorPage.clickTypeTeacher().clickEnglishSpeakingTeacherFilter();
         Assertions.assertEquals(tutorPage.checkTypeTeacher(), TutorFilterMessage.ENGLISH_SPEAKING_TEACHER_MESSAGE);
     }
 
@@ -158,8 +143,7 @@ public class TutorsPageTest {
     @DisplayName("Выбор удобного расписания 'Будни'")
     public void testClickWeekDaysScheduleTeacher() {
         TutorPage tutorPage = new TutorPage();
-        tutorPage.clickScheduleFilter();
-        tutorPage.clickWeekDaysScheduleFilter();
+        tutorPage.clickScheduleFilter().clickWeekDaysScheduleFilter();
         Assertions.assertEquals(tutorPage.checkScheduleFilter(), TutorFilterMessage.WEEK_DAYS_SCHEDULE_MESSAGE);
     }
 
@@ -167,8 +151,7 @@ public class TutorsPageTest {
     @DisplayName("Выбор удобного расписания 'Выходные'")
     public void testClickWeekendScheduleTeacher() {
         TutorPage tutorPage = new TutorPage();
-        tutorPage.clickScheduleFilter();
-        tutorPage.clickWeekendScheduleFilter();
+        tutorPage.clickScheduleFilter().clickWeekendScheduleFilter();
         Assertions.assertEquals(tutorPage.checkScheduleFilter(), TutorFilterMessage.WEEKEND_SCHEDULE_MESSAGE);
     }
 
@@ -176,8 +159,7 @@ public class TutorsPageTest {
     @DisplayName("Выбор удобного расписания 'Утро'")
     public void testClickMorningScheduleTeacher() {
         TutorPage tutorPage = new TutorPage();
-        tutorPage.clickScheduleFilter();
-        tutorPage.clickMorningScheduleFilter();
+        tutorPage.clickScheduleFilter().clickMorningScheduleFilter();
         Assertions.assertEquals(tutorPage.checkScheduleFilter(), TutorFilterMessage.MORNING_SCHEDULE_MESSAGE);
     }
 
@@ -185,8 +167,7 @@ public class TutorsPageTest {
     @DisplayName("Выбор удобного расписания 'День'")
     public void testClickDayScheduleTeacher() {
         TutorPage tutorPage = new TutorPage();
-        tutorPage.clickScheduleFilter();
-        tutorPage.clickDayScheduleFilter();
+        tutorPage.clickScheduleFilter().clickDayScheduleFilter();
         Assertions.assertEquals(tutorPage.checkScheduleFilter(), TutorFilterMessage.DAY_SCHEDULE_MESSAGE);
     }
 
@@ -194,9 +175,21 @@ public class TutorsPageTest {
     @DisplayName("Выбор удобного расписания 'Вечер'")
     public void testClickEveningScheduleTeacher() {
         TutorPage tutorPage = new TutorPage();
-        tutorPage.clickScheduleFilter();
-        tutorPage.clickEveningScheduleFilter();
+        tutorPage.clickScheduleFilter().clickEveningScheduleFilter();
         Assertions.assertEquals(tutorPage.checkScheduleFilter(), TutorFilterMessage.EVENING_SCHEDULE_MESSAGE);
+    }
+
+    @Test
+    @DisplayName("Подбор репетитор")
+    public void selectionTutor() {
+        TutorPage tutorPage = new TutorPage();
+        tutorPage.clickLevelFilter().clickBeginnerLevelFilter();
+        tutorPage.clickTargetFilter().clickBusinessEnglishTargetFilter();
+        tutorPage.clickTypeTeacher().clickRussianSpeakingTeacherFilter();
+        tutorPage.inputCity("Москва");
+        tutorPage.clickScheduleFilter().clickWeekendScheduleFilter();
+        Assertions.assertEquals(tutorPage.checkFoundTutors(), TutorFilterMessage.FOUND_TUTORS_MESSAGE);
+
     }
 
     @AfterEach
