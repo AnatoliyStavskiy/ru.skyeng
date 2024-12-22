@@ -189,7 +189,6 @@ public class TutorsPageTest {
         tutorPage.inputCity("Москва");
         tutorPage.clickScheduleFilter().clickWeekendScheduleFilter();
         Assertions.assertEquals(tutorPage.checkFoundTutors(), TutorFilterMessage.FOUND_TUTORS_MESSAGE);
-
     }
 
     @AfterEach
