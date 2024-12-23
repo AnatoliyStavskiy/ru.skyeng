@@ -2,6 +2,7 @@ package ru.skyeng.api;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
+import io.qameta.allure.Epic;
 import io.restassured.http.Cookies;
 import io.restassured.response.ValidatableResponse;
 import org.apache.logging.log4j.LogManager;
@@ -28,6 +29,7 @@ public class LoginApiTest {
 
     private static final Logger logger = LogManager.getLogger();
 
+    @Epic("API")
     @Test
     @DisplayName("Авторизация с корректными данными")
     public void testAuthorizationWithValidData() {
@@ -67,8 +69,10 @@ public class LoginApiTest {
         logger.info("Завершен тест - Авторизация с корректными данными");
     }
 
+
     @Test
     public void testAuthorizationWithData() {
+        logger.info("Стартовал тест с токеном без куки");
 
         var cookiesBrowser = Driver.getDriver().manage().getCookies();
         List<io.restassured.http.Cookie> restCookies = new ArrayList<>();
@@ -89,6 +93,7 @@ public class LoginApiTest {
                 post("https://id.skyeng.ru/frame/login-submit")
                 .then().
                 log().all();
+        logger.info("Завершён тест с токеном без куки");
     }
 
     @Test
