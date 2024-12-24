@@ -1,4 +1,4 @@
-package ru.skyeng.ui.utils;
+package ru.skyeng.ui.util;
 
 import org.openqa.selenium.WebDriver;
 

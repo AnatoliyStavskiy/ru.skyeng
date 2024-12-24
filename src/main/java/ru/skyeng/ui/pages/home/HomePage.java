@@ -3,12 +3,15 @@ package ru.skyeng.ui.pages.home;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
-import ru.skyeng.ui.utils.CheckLink;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import ru.skyeng.ui.util.CheckLink;
+
 
 import static ru.skyeng.ui.driver.Driver.getDriver;
 
 public class HomePage {
     private WebDriver driver;
+    private WebDriverWait webDriverWait;
 
     public HomePage() {
         driver = getDriver();
