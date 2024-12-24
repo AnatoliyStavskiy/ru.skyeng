@@ -1,5 +1,5 @@
-**Проект по автоматизации тестирования web сайта** 
-[<img height="100" src="C:\Projects\ru.skyeng\images\skyeng.png" width="400"/></img>](https://skyeng.ru/)
+**Проект по автоматизации тестирования web сайта**
+[<img height="100" src="images/skyeng.png" width="200"/></img>](https://skyeng.ru/)
 
 Содержание:
 * Технологии и инструменты
