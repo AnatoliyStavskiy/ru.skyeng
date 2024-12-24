@@ -1,6 +1,7 @@
 package ru.skyeng.ui;
 
 import org.junit.jupiter.api.*;
+import ru.skyeng.api.Point;
 import ru.skyeng.ui.driver.Driver;
 import ru.skyeng.ui.pages.login.LoginMessage;
 import ru.skyeng.ui.pages.login.LoginPage;
@@ -53,7 +54,7 @@ public class LoginTest {
     public void testClickWithIncorrectData() {
         LoginPage loginPage = new LoginPage();
         loginPage.entryWithLoginForm();
-        loginPage.inputEmail("test@mail.ru").inputPassword("123qwerty123").clickLoginButton();
+        loginPage.inputEmail(Point.TEST_EMAIL).inputPassword(Point.TEST_PASSWORD).clickLoginButton();
         Assertions.assertEquals(loginPage.checkTextErrorField(), LoginMessage.ERROR_ENTRY_LOGIN_MESSAGE);
     }
 

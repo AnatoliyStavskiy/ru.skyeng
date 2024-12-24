@@ -19,6 +19,11 @@ public class HomePageTest extends BaseTest {
     WebDriverWait webDriverWait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(8));
     private static final Logger logger = LogManager.getLogger();
 
+    @BeforeEach
+    public void setUp() {
+        Driver.getDriver().get("https://skyeng.ru");
+    }
+
     @Test
     @DisplayName("Переход на Главную страницу, клик по Логотипу")
     public void testClickHeaderLinkLogo() {
@@ -173,5 +178,10 @@ public class HomePageTest extends BaseTest {
         Assertions.assertEquals(homePage.clickHeaderMenuOtherCourses().getActualLink(), (HeaderLink.OTHER_COURSES), "Ссылки не равны");
 
         logger.info("Завершен тест - Переход по ссылке 'Другие курсы");
+    }
+
+    @AfterEach
+    public void tearDown() {
+        Driver.quit();
     }
 }

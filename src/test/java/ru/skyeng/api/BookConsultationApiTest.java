@@ -19,7 +19,7 @@ public class BookConsultationApiTest {
     public void testRegisteredUserRecord() {
         logger.info("Стартовал тест - Запись на консультацию зарегистрированного пользователя");
 
-        ValidatableResponse response = BookConsultationApi.getUserRecordData("Alex", "+79454874459", "bixby5623@gmail.com");
+        ValidatableResponse response = BookConsultationApi.getUserRecordData(Point.TEST_NAME, Point.REAL_PHONE, Point.TEST_EMAIL);
 
         response.statusCode(200);
         response.body("message", equalTo("OK"));
