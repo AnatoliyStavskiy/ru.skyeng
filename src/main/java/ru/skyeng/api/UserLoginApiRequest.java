@@ -11,7 +11,7 @@ import org.jsoup.select.Elements;
 public class UserLoginApiRequest {
     public static final String URL_FOR_TOKEN = "https://id.skyeng.ru/login?redirect=https%3A%2F%2Fskyeng.ru%2F";
     public static final String REQUEST_URL = "https://id.skyeng.ru";
-    public static final String ID_LIGIN_URL = "https://id.skyeng.ru/login";
+    public static final String ID_LOGIN_URL = "https://id.skyeng.ru/login";
     public static final String contentType = "application/x-www-form-urlencoded; charset=UTF-8";
     public static RequestSpecification requestSpecification;
 

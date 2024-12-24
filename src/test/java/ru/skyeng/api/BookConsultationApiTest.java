@@ -1,12 +1,12 @@
 package ru.skyeng.api;
 
-import io.qameta.allure.Epic;
 import io.restassured.response.ValidatableResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.skyeng.domain.User;
+import ru.skyeng.util.GenerationDataUtil;
 
 import static org.hamcrest.Matchers.equalTo;
 
@@ -33,7 +33,6 @@ public class BookConsultationApiTest {
         logger.info("Закончен тест - Запись на консультацию зарегистрированного пользователя");
     }
 
-    @Epic("Consultation")
     @Test
     @DisplayName("Запись на консультацию нового пользователя")
     public void testRegisteredNewUserRecord() {
@@ -47,19 +46,19 @@ public class BookConsultationApiTest {
     @Test
     @DisplayName("Запись на консультацию только с именем")
     public void testRegisteredNewUserOnlyWithName() {
-        User user = new User("Vasiliy");
+        User user = new User(Point.TEST_NAME);
         ValidatableResponse response = BookConsultationApi.getUserRecordData(user);
-        response.statusCode(400);
-        response.body("exception.message", equalTo("Укажите email или телефон"));
+        response.statusCode(400).log().body();
+        response.body("exception.message", equalTo(Point.INDICATE_EMAIL_OR_PHONE_MESSAGE));
     }
 
     @Test
     @DisplayName("Запись на консультацию только с номером и почтой")
     public void testRegisteredNewUserOnlyWithPhoneAndEmail() {
-        User user = new User("+79349742564", "hahaga@gmail.com");
+        User user = new User(GenerationDataUtil.generateRussiaMobilePhone(), GenerationDataUtil.generateEmail());
         ValidatableResponse response = BookConsultationApi.getUserRecordData(user);
-        response.statusCode(400);
-        response.body("exception.message", equalTo("Укажите своё имя"));
+        response.statusCode(400).log().body();
+        response.body("exception.message", equalTo(Point.INDICATE_NAME_MESSAGE));
     }
 
     @Test
