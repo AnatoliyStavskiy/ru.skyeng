@@ -21,8 +21,6 @@ public class BookConsultationApiTest {
 
         ValidatableResponse response = BookConsultationApi.getUserRecordData("Alex", "+79454874459", "bixby5623@gmail.com");
 
-        logger.info("Авторизация с корректными данными - получен csrfToken: " );
-
         response.statusCode(200);
         response.body("message", equalTo("OK"));
         response.body("userLogIn", equalTo(false));
@@ -41,7 +39,7 @@ public class BookConsultationApiTest {
     public void testRegisteredNewUserRecord() {
         User user = new User();
         ValidatableResponse response = BookConsultationApi.getUserRecordData(user);
-        response.statusCode(200);
+        response.statusCode(200).log().body();
         response.body("message", equalTo("OK"));
         response.body("userLogIn", equalTo(true));
     }

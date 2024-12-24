@@ -14,6 +14,7 @@ public class HomePageXpath {
     public static final String HEADER_MENU_OTHER_COURSES = "//div[@class='header-menu-content ng-tns-c1903745324-0']//a[@class='simple-menu-item-link ng-star-inserted'][contains(text(),'Другие курсы')]";
 
     public static final String LOGIN = "//button[@data-testid='cms-header-login']";
+    public static final String LOGIN_2 = "//div[@class='login__menu']//div[class='login__menu-lk']//a[@href='https://id.skyeng.ru/login']";
     public static final String SIGN_UP_FOR_LESSON = "//button[@data-testid='cms-header-register']";
 
     public static final String ACCEPT_COOKIE = "//div[@class='btn-ok']";

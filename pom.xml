@@ -16,7 +16,7 @@
         <allure.version>2.25.0</allure.version>
         <aspectj.version>1.9.7</aspectj.version>
         <maven-allure-version>2.12.0</maven-allure-version>
-        <maven-surefire-plugin.version>3.5.1</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
     </properties>
 
     <dependencyManagement>
