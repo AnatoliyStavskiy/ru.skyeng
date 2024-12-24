@@ -12,6 +12,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.skyeng.domain.User;
 import ru.skyeng.ui.driver.Driver;
+import ru.skyeng.util.GenerationDataUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,9 +36,9 @@ public class LoginApiTest {
     public void testAuthorizationWithValidData() {
         logger.info("Стартовал тест - Авторизация с корректными данными");
 
-        Selenide.open(UserLoginApiRequest.ID_LIGIN_URL);
-        $x("//a[@class='link link--primary js-phone-form-to-username-password']").click();
-        String csrf = $x("//input[@name='csrfToken']").getValue();
+        Selenide.open(UserLoginApiRequest.ID_LOGIN_URL);
+        $x(Point.CLICK_FORM_LOGIN_XPATH).click();
+        String csrf = $x(Point.CSFR_TOKEN_XPATH).getValue();
 
         logger.info("Авторизация с корректными данными - получен csrfToken: " + csrf);
 
@@ -58,8 +59,8 @@ public class LoginApiTest {
 
         given().cookies(new Cookies(restCookies))
                 .formParam("csrfToken", csrf)
-                .formParam("username", "tests2025test@tutamail.com")
-                .formParam("password", "2025test2025")
+                .formParam("username", Point.VALIDATE_EMAIL)
+                .formParam("password", Point.VALIDATE_PASSWORD)
                 .post("https://id.skyeng.ru/frame/login-submit")
                 .then().log().status()
                 .log().body()
@@ -87,10 +88,10 @@ public class LoginApiTest {
 
         given().cookies(new Cookies(restCookies))
                 .formParam("csrfToken", UserLoginApiRequest.findToken())
-                .formParam("username", "tests2025test@tutamail.com")
-                .formParam("password", "2025test2025");
+                .formParam("username", Point.VALIDATE_EMAIL)
+                .formParam("password", Point.VALIDATE_PASSWORD);
         when().
-                post("https://id.skyeng.ru/frame/login-submit")
+                post(Point.LOGIN_SUBMIT)
                 .then().
                 log().all();
         logger.info("Завершён тест с токеном без куки");
@@ -107,14 +108,14 @@ public class LoginApiTest {
                 .log().all()
                 .statusCode(200)
                 .body("success", equalTo(false))
-                .body("message", equalTo("CSRF-token is invalid. Please, reload the page and try again."));
+                .body("message", equalTo(Point.CSFR_ERROR_MESSAGE));
     }
 
     @Test
     @DisplayName("Запись на консультацию зарегистрированного пользователя")
     public void testRegisteredUserRecord() {
-        ValidatableResponse response = BookConsultationApi.getUserRecordData("Alex", "+79454874459", "bixby5623@gmail.com");
-        response.statusCode(200);
+        ValidatableResponse response = BookConsultationApi.getUserRecordData(Point.TEST_NAME, Point.REAL_PHONE, Point.TEST_EMAIL);
+        response.statusCode(200).log().all();
         response.body("message", equalTo("OK"));
         response.body("userLogIn", equalTo(false));
         response.body("userLogIn", equalTo(false));
@@ -137,18 +138,18 @@ public class LoginApiTest {
     @Test
     @DisplayName("Запись на консультацию только с именем")
     public void testRegisteredNewUserOnlyWithName() {
-        User user = new User("Vasiliy");
+        User user = new User(Point.TEST_NAME);
         ValidatableResponse response = BookConsultationApi.getUserRecordData(user);
         response.statusCode(400).log().body();
-        response.body("exception.message", equalTo("Укажите email или телефон"));
+        response.body("exception.message", equalTo(Point.INDICATE_EMAIL_OR_PHONE_MESSAGE));
     }
 
     @Test
     @DisplayName("Запись на консультацию только с номером и почтой")
     public void testRegisteredNewUserOnlyWithPhoneAndEmail() {
-        User user = new User("+79349742564", "hahaga@gmail.com");
+        User user = new User(GenerationDataUtil.generateRussiaMobilePhone(), GenerationDataUtil.generateEmail());
         ValidatableResponse response = BookConsultationApi.getUserRecordData(user);
         response.statusCode(400).log().body();
-        response.body("exception.message", equalTo("Укажите своё имя"));
+        response.body("exception.message", equalTo(Point.INDICATE_NAME_MESSAGE));
     }
 }

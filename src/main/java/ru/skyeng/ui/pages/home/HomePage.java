@@ -5,7 +5,6 @@ import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
 import ru.skyeng.ui.utils.CheckLink;
 
-
 import static ru.skyeng.ui.driver.Driver.getDriver;
 
 public class HomePage {
