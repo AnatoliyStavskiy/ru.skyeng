@@ -17,7 +17,6 @@
         <allure.version>2.26.0</allure.version>
         <aspectj.version>1.9.22</aspectj.version>
     </properties>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
