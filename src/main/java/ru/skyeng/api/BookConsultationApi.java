@@ -13,9 +13,9 @@ public class BookConsultationApi {
                 .formParam("name", name)
                 .formParam("phone", phone)
                 .formParam("email", email)
-        .when()
+                .when()
                 .post("https://skygate.skyeng.ru/api/v1/proxy-adult/create")
-        .then();
+                .then();
         return response;
     }
 
