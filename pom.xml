@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <allure.version>2.26.0</allure.version>
-        <aspectj.version>1.9.22</aspectj.version>
+        <aspectj.version>1.9.21</aspectj.version>
         <maven-allure-version>2.12.0</maven-allure-version>
     </properties>
     <dependencyManagement>
