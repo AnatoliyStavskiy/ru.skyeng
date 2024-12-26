@@ -29,34 +29,40 @@ public class TutorPage {
         return driver.findElement(By.xpath(TutorXpath.LEVEL_XPATH)).getText();
     }
 
-    public void clickBeginnerLevelFilter() {
+    public TutorPage clickBeginnerLevelFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.BEGINNER_LEVEL_XPATH)).click();
+        return this;
     }
 
-    public void clickElementaryLevelFilter() {
+    public TutorPage clickElementaryLevelFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.ELEMENTARY_LEVEL_XPATH)).click();
+        return this;
     }
 
-    public void clickPreIntermediateLevelFilter() {
+    public TutorPage clickPreIntermediateLevelFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.PRE_INTERMEDIATE_LEVEL_XPATH)).click();
+        return this;
     }
 
-    public void clickIntermediateLevelFilter() {
+    public TutorPage clickIntermediateLevelFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.INTERMEDIATE_LEVEL_XPATH)).click();
+        return this;
     }
 
-    public void clickUpperIntermediateLevelFilter() {
+    public TutorPage clickUpperIntermediateLevelFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.UPPER_INTERMEDIATE_LEVEL_XPATH)).click();
+        return this;
     }
 
-    public void clickAdvancedLevelFilter() {
+    public TutorPage clickAdvancedLevelFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.ADVANCED_LEVEL_XPATH)).click();
+        return this;
     }
 
     public TutorPage clickTargetFilter() {
@@ -69,34 +75,40 @@ public class TutorPage {
         return driver.findElement(By.xpath(TutorXpath.TARGET_XPATH)).getText();
     }
 
-    public void clickTalkEnglishTargetFilter() {
+    public TutorPage clickTalkEnglishTargetFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.TALK_ENGLISH_TARGET_XPATH)).click();
+        return this;
     }
 
-    public void clickBusinessEnglishTargetFilter() {
+    public TutorPage clickBusinessEnglishTargetFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.BUSINESS_ENGLISH_TARGET_XPATH)).click();
+        return this;
     }
 
-    public void clickPreparationExamTargetFilter() {
+    public TutorPage clickPreparationExamTargetFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.PREPARATION_EXAM_TARGET_XPATH)).click();
+        return this;
     }
 
-    public void clickTravelEnglishTargetFilter() {
+    public TutorPage clickTravelEnglishTargetFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.TRAVEL_ENGLISH_TARGET_XPATH)).click();
+        return this;
     }
 
-    public void clickPreparationInterviewTargetFilter() {
+    public TutorPage clickPreparationInterviewTargetFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.PREPARATION_INTERVIEW_TARGET_XPATH)).click();
+        return this;
     }
 
-    public void clickOvercomeBarrierTargetFilter() {
+    public TutorPage clickOvercomeBarrierTargetFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.OVERCOME_BARRIER_TARGET_XPATH)).click();
+        return this;
     }
 
     public TutorPage clickTypeTeacher() {
@@ -109,24 +121,28 @@ public class TutorPage {
         return driver.findElement(By.xpath(TutorXpath.TYPE_TEACHER_XPATH)).getText();
     }
 
-    public void clickRussianSpeakingTeacherFilter() {
+    public TutorPage clickRussianSpeakingTeacherFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.RUSSIAN_SPEAKING_TEACHER_XPATH)).click();
+        return this;
     }
 
-    public void clickPremiumTeacherFilter() {
+    public TutorPage clickPremiumTeacherFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.PREMIUM_TEACHER_XPATH)).click();
+        return this;
     }
 
-    public void clickEnglishSpeakingTeacherFilter() {
+    public TutorPage clickEnglishSpeakingTeacherFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.ENGLISH_SPEAKING_TEACHER_XPATH)).click();
+        return this;
     }
 
-    public void inputCity(String string) {
+    public TutorPage inputCity(String string) {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.CITY_INPUT_XPATH)).sendKeys(string);
+        return this;
     }
 
     public TutorPage clickScheduleFilter() {
@@ -139,29 +155,34 @@ public class TutorPage {
         return driver.findElement(By.xpath(TutorXpath.SCHEDULE_XPATH)).getText();
     }
 
-    public void clickWeekDaysScheduleFilter() {
+    public TutorPage clickWeekDaysScheduleFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.WEEK_DAYS_SCHEDULE_XPATH)).click();
+        return this;
     }
 
-    public void clickWeekendScheduleFilter() {
+    public TutorPage clickWeekendScheduleFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.WEEKEND_SCHEDULE_XPATH)).click();
+        return this;
     }
 
-    public void clickMorningScheduleFilter() {
+    public TutorPage clickMorningScheduleFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.MORNING_SCHEDULE_XPATH)).click();
+        return this;
     }
 
-    public void clickDayScheduleFilter() {
+    public TutorPage clickDayScheduleFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.DAY_SCHEDULE_XPATH)).click();
+        return this;
     }
 
-    public void clickEveningScheduleFilter() {
+    public TutorPage clickEveningScheduleFilter() {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.xpath(HomePageXpath.LOGIN)));
         driver.findElement(By.xpath(TutorXpath.EVENING_SCHEDULE_XPATH)).click();
+        return this;
     }
 
     public String checkFoundTutors() {
