@@ -19,13 +19,14 @@ public class LoginPage {
 
     WebDriverWait webDriverWait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
 
-    public void entryWithLoginForm() {
+    public LoginPage entryWithLoginForm() {
         LoginPage loginPage = new LoginPage();
         try {
             loginPage.checkUsernameInput();
         } catch (Exception e) {
             loginPage.clickEntryWithPassword();
         }
+        return this;
     }
 
     public LoginPage clickLoginButton() {

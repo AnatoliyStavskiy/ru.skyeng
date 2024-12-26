@@ -31,6 +31,7 @@ public class HomePageTest extends BaseTest {
 
         HomePage homePage = new HomePage();
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath(HomePageXpath.LOGIN))));
+        homePage.clickHeaderMenuSkyengLogo();
         Assertions.assertEquals(homePage.clickHeaderMenuSkyengLogo().getActualLink(), HeaderLink.HOME_LINK);
 
         logger.info("Завершен тест - Переход на Главную страницу, клик по Логотипу");
@@ -43,6 +44,7 @@ public class HomePageTest extends BaseTest {
 
         HomePage homePage = new HomePage();
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(HomePageXpath.LOGIN)));
+        homePage.clickHeaderMenuAdult().clickHeaderMenuAdultsPremium();
         Assertions.assertEquals(homePage.clickHeaderMenuAdult().clickHeaderMenuAdultsPremium().getActualLink(), AdultLink.PREMIUM_LINK);
 
         logger.info("Завершен тест - Переход по ссылке взрослым -> Премиум");
@@ -55,6 +57,7 @@ public class HomePageTest extends BaseTest {
 
         HomePage homePage = new HomePage();
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(HomePageXpath.LOGIN)));
+        homePage.clickHeaderMenuAdult().clickHeaderMenuAdultsTalkClub();
         Assertions.assertEquals(homePage.clickHeaderMenuAdult().clickHeaderMenuAdultsTalkClub().getActualLink(), AdultLink.TALK_CLUB_LINK);
 
         logger.info("Завершен тест - Переход по ссылке взрослым -> Разговорные клубы");
@@ -67,6 +70,7 @@ public class HomePageTest extends BaseTest {
 
         HomePage homePage = new HomePage();
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(HomePageXpath.LOGIN)));
+        homePage.clickHeaderMenuAdult().clickHeaderMenuAdultsSelfStudy();
         Assertions.assertEquals(homePage.clickHeaderMenuAdult().clickHeaderMenuAdultsSelfStudy().getActualLink(), AdultLink.SELF_STUDY_LINK);
 
         logger.info("Завершен тест - Переход по ссылке взрослым -> Self-study");
@@ -79,6 +83,7 @@ public class HomePageTest extends BaseTest {
 
         HomePage homePage = new HomePage();
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(HomePageXpath.LOGIN)));
+        homePage.clickHeaderMenuAdult().clickHeaderMenuAdultsStandart();
         Assertions.assertEquals(homePage.clickHeaderMenuAdult().clickHeaderMenuAdultsStandart().getActualLink(), AdultLink.STANDART_LINK);
 
         logger.info("Завершен тест - Переход по ссылке взрослым -> Стандарт");
@@ -91,6 +96,7 @@ public class HomePageTest extends BaseTest {
 
         HomePage homePage = new HomePage();
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(HomePageXpath.LOGIN)));
+        homePage.clickHeaderMenuAdult().clickHeaderMenuAdultsTalks();
         Assertions.assertEquals(homePage.clickHeaderMenuAdult().clickHeaderMenuAdultsTalks().getActualLink(), AdultLink.TALKS_LINK);
 
         logger.info("Завершен тест - Переход по ссылке взрослым -> Talks");
@@ -103,6 +109,7 @@ public class HomePageTest extends BaseTest {
 
         HomePage homePage = new HomePage();
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(HomePageXpath.LOGIN)));
+        homePage.clickHeaderMenuAdult().clickHeaderMenuAdultsCourses();
         Assertions.assertEquals(homePage.clickHeaderMenuAdult().clickHeaderMenuAdultsCourses().getActualLink(), AdultLink.COURSES_LINK);
 
         logger.info("Завершен тест - Переход по ссылке взрослым -> Курсы");
@@ -115,6 +122,7 @@ public class HomePageTest extends BaseTest {
 
         HomePage homePage = new HomePage();
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(HomePageXpath.LOGIN)));
+        homePage.clickHeaderMenuTutors();
         Assertions.assertTrue(homePage.clickHeaderMenuTutors().getActualLink().contains(HeaderLink.TUTORS_LINK));
 
         logger.info("Завершен тест - Переход по ссылке 'Репетиторы'");
@@ -127,6 +135,7 @@ public class HomePageTest extends BaseTest {
 
         HomePage homePage = new HomePage();
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(HomePageXpath.LOGIN)));
+        homePage.clickHeaderMenuCertificates();
         Assertions.assertEquals(homePage.clickHeaderMenuCertificates().getActualLink(), HeaderLink.CERTIFICATES_LINK);
 
         logger.info("Завершен тест - Переход по ссылке 'Сертификаты'");
@@ -139,6 +148,7 @@ public class HomePageTest extends BaseTest {
 
         HomePage homePage = new HomePage();
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(HomePageXpath.LOGIN)));
+        homePage.clickHeaderMenuNewProfession();
         Assertions.assertEquals(homePage.clickHeaderMenuNewProfession().getActualLink(), HeaderLink.NEW_PROFESSION_LINK);
 
         logger.info("Завершен тест - Переход по ссылке 'Новая профессия'");
@@ -151,6 +161,7 @@ public class HomePageTest extends BaseTest {
 
         HomePage homePage = new HomePage();
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(HomePageXpath.LOGIN)));
+        homePage.clickHeaderMenuOnlineTest();
         Assertions.assertTrue(homePage.clickHeaderMenuOnlineTest().getActualLink().contains(HeaderLink.ONLINE_TEST_LINK));
 
         logger.info("Завершен тест - Переход по ссылке 'Онлайн тест'");
@@ -163,6 +174,7 @@ public class HomePageTest extends BaseTest {
 
         HomePage homePage = new HomePage();
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(HomePageXpath.LOGIN)));
+        homePage.clickHeaderMenuTeachers();
         Assertions.assertTrue(homePage.clickHeaderMenuTeachers().getActualLink().contains(HeaderLink.TEACHERS_LINK));
 
         logger.info("Завершен тест - Переход по ссылке 'Учителям'");
@@ -175,6 +187,7 @@ public class HomePageTest extends BaseTest {
 
         HomePage homePage = new HomePage();
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(HomePageXpath.LOGIN)));
+        homePage.clickHeaderMenuOtherCourses();
         Assertions.assertEquals(homePage.clickHeaderMenuOtherCourses().getActualLink(), (HeaderLink.OTHER_COURSES), "Ссылки не равны");
 
         logger.info("Завершен тест - Переход по ссылке 'Другие курсы");
