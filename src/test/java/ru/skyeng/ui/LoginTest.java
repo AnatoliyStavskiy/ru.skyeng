@@ -31,7 +31,7 @@ public class LoginTest {
     }
 
     @Test
-    @DisplayName("Вход с пустым паролем")
+    @DisplayName("Вход с пустым полем паролем")
     public void testClickEntryWithUsernameOnly() {
         LoginPage loginPage = new LoginPage()
                 .entryWithLoginForm()
@@ -66,7 +66,8 @@ public class LoginTest {
         LoginPage loginPage = new LoginPage()
                 .entryWithLoginForm()
                 .inputEmail(LoginPageData.CORRECT_LOGIN_EMAIL)
-                .inputPassword(LoginPageData.CORRECT_LOGIN_PASSWORD).clickLoginButton();
+                .inputPassword(LoginPageData.CORRECT_LOGIN_PASSWORD)
+                .clickLoginButton();
         Assertions.assertEquals(loginPage.checkSuccessfulLogin(), LoginMessage.LOGIN_USER_MESSAGE);
     }
 

@@ -14,10 +14,12 @@ public class CheckLink {
     public void switchToWindow(WebDriver driver) {
         String actualWindow = driver.getWindowHandle();
         Set<String> allWindows = driver.getWindowHandles();
-        for (String windowHandle : allWindows) {
-            if (!windowHandle.equals(actualWindow)) {
-                driver.switchTo().window(windowHandle);
-                break;
+        if (allWindows.size() > 1) {
+            for (String windowHandle : allWindows) {
+                if (!windowHandle.equals(actualWindow)) {
+                    driver.switchTo().window(windowHandle);
+                    break;
+                }
             }
         }
     }
