@@ -6,7 +6,7 @@
 * Реализованные проверки
 
 **Технологии и инструменты**
-![img.png](img.png)
+![img.png](images/img.png)
 
 **Реализованные проверки**
 
@@ -23,4 +23,12 @@
 - [x] Авторизация
 - [x] Форма записи на консультацию
   
-API тесты:
+**Сборка Jenkins + Allure**
+
+![img.png](images/Jenkins.png)
+
+![img.png](images/Allure.png)
+
+![img.png](images/AllureGraphs.png)
+
+![img.png](images/AllureGraphs.png)

@@ -20,15 +20,14 @@ public class BookConsultationApiTest {
         logger.info("Стартовал тест - Запись на консультацию зарегистрированного пользователя");
 
         ValidatableResponse response = BookConsultationApi.getUserRecordData(Point.TEST_NAME, Point.REAL_PHONE, Point.TEST_EMAIL);
-
-        response.statusCode(200);
-        response.body("message", equalTo("OK"));
-        response.body("userLogIn", equalTo(false));
-        response.body("userLogIn", equalTo(false));
-        response.body("userId", equalTo(18616265));
-        response.body("loginLink", equalTo(false));
-        response.body("educationServiceId", equalTo(15876089));
-        response.body("wasBump", equalTo(true));
+        response.statusCode(200)
+                .body("message", equalTo("OK"))
+                .body("userLogIn", equalTo(false))
+                .body("userLogIn", equalTo(false))
+                .body("userId", equalTo(18616265))
+                .body("loginLink", equalTo(false))
+                .body("educationServiceId", equalTo(15876089))
+                .body("wasBump", equalTo(true));
 
         logger.info("Закончен тест - Запись на консультацию зарегистрированного пользователя");
     }
